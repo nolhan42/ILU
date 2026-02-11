@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Me</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><div></div></li>
+            <li><a href="Me.html">Me</a></li>
+            <li><div></div></li>
+            <li><a href="Her.html">You</a></li>
+        </ul>
+    <div class="content">
+        <h2>My Love for You</h2>
+        <div class="people">
+            <div class="people-top">
+                <img src="../Images/Me.jpg" alt="My Wife">
+                <p id="me">Name : Lucia</p>
+            </div>
+            <br>
+            <p>How She calls me</p>
+            <ul class="people-bottom">
+                <li class="names2">My cutie-pie</li>
+                <li class="names2">My Love</li>
+                <li class="names2">And lots more...</li>
+            </ul>
+
+            <h1>Poetry</h1>
+            <div class="carousel">
+                <button class="carousel-arrow left-arrow">&#10094;</button>
+                <div class="div-poetry">
+                    <p class="poetry active-poem">
+                AVANT
+                Avant, <b>J</b>e ne savais plus où j'allais.
+                Avant, je n<b>e</b> savais plus comment regarder en face de moi.
+                Avant, je pensais que at<b>t</b>endre était ce qu'il me fallait.
+                Avant, je ne voy<b>a</b>is rien, à part le noir devant moi.
+                Cependant,
+                Un jour je fis une rencontre, qu<b>i</b> fut banale au premier regard.
+                Une rencontre qui n'avançait rien de spécial, ou de <b>m</b>auvais d'ailleurs.
+                Et pourtant, le t<b>e</b>mps défia ce que je voyais.
+                Et c'est pourquoi, suivi d'un temps incertains, ce<b>L</b>a se transforma. 
+                Nous nous sommes parlées d'<b>i</b>nombrable fois,
+                Nous nous sommes amusée p<b>l</b>usieurs fois,
+                Et c'est pendant tout ce temps, que des sentiment déc<b>i</b>dèrent de faire surface.
+                Ils furent si petit, mais <b>t</b>rès vite, ils devinrent plus grand, plus imposant.
+                Jusqu'au jours ou tout bascula, signalant le début d'une belle <b>h</b>istoire.</p>
+
+                    <p class="poetry">
+                APRES
+                Je t'aime, je t'aime et je sais que tu m'aime aussi.
+                Je t'aime, et je sais que je tiens à toi.
+                Je t'aime, et je sais que je ne peux vivre ma vie sans toi.
+                Je t'aime, et je sais que je ne pourrais être heureuse si tu n'est plus là.
+                Je t'aime, et je pense à toi toutes les heures, toutes les minues.
+                Je t'aime, et je souhaite que l'on ne se quitte jamais.
+                Je t'aime, et je te veux dans mes bras.
+                Je t'aime, et je veux pouvoir t'embrasser.
+                Je t'aime, et je sais que tu m'aime aussi.
+                S'il te plaît, après tout ce texte, je souhaite pourvoir te dire.
+                <b>Reste ma femme, ma princesse et ma vie.</b></p>
+
+                    <p class="poetry">
+                Je T'aime
+                Je t'aime
+                Deux mots simple, que j'ai pourtant rarement prononcée
+                Deux mots, qui veulent dire tout un tas de merveilleuses choses
+                Des choses si magnifique que je ne serais pas comment les expliquée
+                Et tout cela, aussi beau soit-il, je les garde pour mon amoureuse.
+                Chaque instant est remplis de bonheur
+                Chaque jour, je suis épanouie
+                Je vois les minutes comme des heures
+                Et je sais qu'avec toi je veux vivre ma vie
+                Tu as fais chavirer mon coeur
+                Et je compte faire chavirer le tien
+                Tu es parfaite et mérite la seule place dans mon coeur
+                Je t'aime, alors viens
+                Prend ma main, et je prend la tienne
+                Que la vie avec toi à jamais m'appartienne</p>
+
+                    <p class="poetry">
+                ETOILE
+                Aucun mot ne serra assez puissant.
+                Rien ne pourras être plus grand.
+                Que tout les sentiments que j'ai pour toi.
+                Tu es ce qui me donne la foie.
+                Dans un ciel, tu serais ma Venus.
+                Parmi les étoiles, tu serais ma Sirius.
+                Je ne vois que toi briller la journée.
+                Tu es mon Soleil en plein été..
+                Et même si des barrières nous séparent.
+                Un jour je serais à ta portée.
+                Pour toi j'irais casser ces remparts.
+                Qui de ton contact me font rêvée.
+                Tu es mon étoile, et je suis ta reine.
+                Et jamais assez, je ne te dirais Je T'aime.</p> 
+                </div>
+                <button class="carousel-arrow right-arrow">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav a').forEach(function(a){
+            const linkFile = a.getAttribute('href').split('/').pop();
+            if(linkFile === current) a.classList.add('active');
+        });
+    })();
+
+    // Carousel functionality
+    (function(){
+        const poems = document.querySelectorAll('.poetry');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        let currentIndex = 0;
+
+        function showPoem(index) {
+            poems.forEach(p => p.classList.remove('active-poem'));
+            poems[index].classList.add('active-poem');
+        }
+
+        leftArrow.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + poems.length) % poems.length;
+            showPoem(currentIndex);
+        });
+
+        rightArrow.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % poems.length;
+            showPoem(currentIndex);
+        });
+    })();
+    </script>
+</body>
+</html>

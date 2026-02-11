@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>For My Love ♡</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><div></div></li>
+            <li><a href="HTML/Me.html">Me</a></li>
+            <li><div></div></li>
+            <li><a href="HTML/Her.html">You</a></li>
+        </ul>
+</nav>
+    <h2>♡MY LOVE♡</h2>
+    <div class="content">
+        <div class="carousel">
+                <div class="div-poetry">
+                    <p class="poetryh active-poem">
+                My love for you is like intinity...
+                Never in this timeline this love will end.
+                I want to be with you for the rest of my life.
+                Because you are <b>everything</b> I need now. ♡</p>
+                </div>
+        </div>
+
+        <video class="gif" src="Images/netsuzou-trap.mp4" autoplay muted loop playsinline>
+            Your browser does not support the video tag.
+        </video>
+
+        <p id="love">I LOVE YOU WITH ALL I HAVE ♡ </p>
+    </div>
+
+    <script>
+    (function(){
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav a').forEach(function(a){
+            const linkFile = a.getAttribute('href').split('/').pop();
+            if(linkFile === current) a.classList.add('active');
+        });
+    })();
+    </script>
+</body>
+</html>

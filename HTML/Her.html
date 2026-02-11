@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>You ♡</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><div></div></li>
+            <li><a href="Me.html">Me</a></li>
+            <li><div></div></li>
+            <li><a href="Her.html">You</a></li>
+        </ul>
+
+    <div class="content">
+        <h2>Your Love for Me</h2>
+        <div class="people">
+            <div class="people-top">
+                <img src="../Images/Her.jpg" alt="My Wife">
+                <p id="her">Name : Lilith</p>
+            </div>
+            <br>
+            <p>How I call her</p>
+            <ul class="people-bottom">
+                <li class="names">My Princess</li>
+                <li class="names">My Love</li>
+                <li class="names">My Wife</li>
+                <li class="names">And lots more...</li>
+            </ul>
+
+            <h1>Poetry</h1>
+            <div class="carousel">
+                <button class="carousel-arrow left-arrow">&#10094;</button>
+                <div class="div-poetry">
+                    <p class="poetry active-poem">
+                le matin je me leve et le soir je me couche,
+                il fait fait froid,
+                car toi, mon soleil, n'est pas la,
+                pour rechauffer mon coeur,
+                tu brille avec ardeur,
+                pour m'apporter la joie, 
+                tu me prend dans tes bras,
+                malgrés la distance,
+                je te sens toute proche,
+                sans connaitre ton apparance,
+                je m'attient cette acroche,
+                te dire je t'aime,
+                ne definie plus mon amour pour toi,
+                faire de toi ma femme,
+                est devenue mon but en soit,
+                aussi aiguisée qu'une lame,
+                cette love story,
+                durera toute notre vie.</p>
+
+                    <p class="poetry">
+                Chaque <b>j</b>ours je pense a toi,
+                Au nombreuse fois ou j'ai r<b>e</b>vée de t'avoir dans mes bras,
+                Chaque instant sans e<b>t</b>re a tes cotés,
+                Il me semble se p<b>a</b>ssait une éternités,
+                Mon amour pour toi est <b>i</b>nfiniment grand, 
+                Pour <b>m</b>oi t'a voix est le plus mélodieux des chant,
+                Tu est devenue ma raison d'êtr<b>e</b>,
+                Grace a toi j'ai apprise a arranger les <b>l</b>ettres,
+                Po<b>u</b>r t'écrie de trés jolie poémes,
+                Et te montrée <b>c</b>omme je t'aime,
+                Cec<b>i</b> est le debut du chemin,
+                Que j'éspere etre s<b>a</b>ns fin, 
+                <b>Toi</b> et <b>moi</b> je l'ais deja dit,
+                Mais c'est pour la vie.</p>
+
+                    <p class="poetry">
+                t'écrire se genre de poéme
+                qui me permet de te montrée a quel point je t'aime
+                me permet d'oublier la distance qui nous separe
+                qui se fait ressentir tel un rampart
+                mais mon amour pour toi est si grand
+                que je m'imagine avec toi sur un banc
+                a s'embrassée au grés du vent 
+                tu hante mes pensée
+                tel un fantôme et son manoir hantée
+                bien qu'aucunement cela me déplait
+                car ma chére lucia toi qui n'a connu deniérement que malheure
+                je te ferait decouvrir ce qu'est le bonheur</p>
+
+                    <p class="poetry">
+                car comme je te l'ai deja dit,
+                mon amour pour toi est infini,
+                chaque fois que je te parle,
+                j'oublie la course du temps infernale,
+                je ne pense qu'a toi,
+                au combien de fois tu aurais pu etre dans mes bras,
+                j'ai envie de t'embrassée,
+                sous la douce protection d'un cerisier,
+                pouvoir te regardée, te touché, t'aimé,
+                sans que cette distance nous sépare,
+                sans que nos parent nous prennent a part,
+                pouvoir t'aimé de toute les façon possible,
+                pour que cette émotion que je ressent deviennent audible,
+                encore une foit je te le dirais,
+                je t'aime, je t'aimais et je t'aimerais</p>
+                </div>
+                <button class="carousel-arrow right-arrow">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('nav a').forEach(function(a){
+            const linkFile = a.getAttribute('href').split('/').pop();
+            if(linkFile === current) a.classList.add('active');
+        });
+    })();
+
+    // Carousel functionality
+    (function(){
+        const poems = document.querySelectorAll('.poetry');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+        let currentIndex = 0;
+
+        function showPoem(index) {
+            poems.forEach(p => p.classList.remove('active-poem'));
+            poems[index].classList.add('active-poem');
+        }
+
+        leftArrow.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + poems.length) % poems.length;
+            showPoem(currentIndex);
+        });
+
+        rightArrow.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % poems.length;
+            showPoem(currentIndex);
+        });
+    })();
+    </script>
+</body>
+</html>
