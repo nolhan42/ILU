@@ -142,6 +142,10 @@ h2 {
     margin-top: 20px;
 }
 
+#STV {
+    font-size: 14px;
+}
+
 /*--------------------------------Carousel--------------------------------*/
 .carousel{
     display: flex;
